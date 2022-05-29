@@ -31,15 +31,13 @@ class AuthController extends Controller
         $cekmail = User::where('email', $request->email)->first();
 
         if ($cekmail) {
-            return response()->json(['error' => "Email Sudah digunakan"]);
+            return response()->json(['message' => "Email Sudah digunakan"]);
         } else {
             $input = $request->all();
             $input['password'] = bcrypt($input['password']);
             $user = User::Create($input);
-            $success['token'] = $user->createToken('GlucosApp')->accessToken;
+            $success['message'] = "User Created";
             $success['name'] = $user->name;
-
-
             return response()->json(['success' => $success], $this->messageStatus);
         }
     }
