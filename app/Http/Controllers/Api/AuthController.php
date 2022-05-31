@@ -31,7 +31,7 @@ class AuthController extends Controller
         $cekmail = User::where('email', $request->email)->first();
 
         if ($cekmail) {
-            return response()->json(['message' => "Email Sudah digunakan"]);
+            return response()->json(['error' => 'Email telah digunakan'], 401);
         } else {
             $input = $request->all();
             $input['password'] = bcrypt($input['password']);
