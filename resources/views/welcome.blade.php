@@ -16,7 +16,7 @@
     <body class="antialiased" style="margin: 5%">
         <nav id="sideNav">
             <h1>Dokumentasi API Glucos App</h1>
-            <p><b>End Point : </b>https://glucos-app.000webhostapp.com/api</b></p>
+            <p><b>End Point : </b>https://glucos-app.as.r.appspot.com/api</b></p>
             <div>
                 <ul>
                     <li><a href="#register">Register</a></li>
